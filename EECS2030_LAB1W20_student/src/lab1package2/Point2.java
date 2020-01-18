@@ -23,6 +23,8 @@ public class Point2 {
 		 * Initialize the point to have coordinates <code>(0, 0)</code>.
 		 */
 		public Point2() {
+			x=0;
+			y=0;
 			
 		}
 
@@ -35,6 +37,8 @@ public class Point2 {
 		 *            the y-coordinate of the point
 		 */
 		public Point2(double x, double y) {
+			this.x=x;
+			this.y=y;
 			
 		}
 
@@ -53,7 +57,7 @@ public class Point2 {
 		 * @return the x-coordinate of this point
 		 */
 		public double getX() {
-			
+			return this.x;
 		}
 
 		/**
@@ -62,7 +66,7 @@ public class Point2 {
 		 * @return the y-coordinate of this point
 		 */
 		public double getY() {
-			
+			return this.y;
 		}
 
 		/**
@@ -72,6 +76,7 @@ public class Point2 {
 		 *            the new x-coordinate of this point
 		 */
 		public void setX(double newX) {
+			this.x=newX;
 			
 		}
 
@@ -82,7 +87,7 @@ public class Point2 {
 		 *            the new y-coordinate of this point
 		 */
 		public void setY(double newY) {
-			
+			this.y=newY;
 		}
 
 		/**
@@ -95,7 +100,8 @@ public class Point2 {
 		 *            the new y-coordinate of this point
 		 */
 		public void set(double newX, double newY) {
-		
+		this.x=newX;
+		this.y=newY;
 		}
 
 		/**
@@ -106,6 +112,7 @@ public class Point2 {
 		 *            the change in the x coordinate of this point
 		 */
 		public void moveX(double dx) {
+			this.x=this.getX()+dx;
 			
 		}
 
@@ -117,7 +124,7 @@ public class Point2 {
 		 *            the change in the y coordinate of this point
 		 */
 		public void moveY(double dy) {
-			
+			this.y=this.y+dy;
 		}
 
 		/**
@@ -128,6 +135,8 @@ public class Point2 {
 		 * @return the distance between this point and another point
 		 */
 		public double distanceTo(Point2 other) {
+		   double dis= Math.sqrt((Math.pow((other.x-this.x), 2)+ Math.pow((other.y-this.y), 2)));
+			return dis;
 		
 		}
 
@@ -144,6 +153,11 @@ public class Point2 {
 		 *         less than tol
 		 */
 		public boolean similarTo(Point2 other, double tol) {
+			double d= this.distanceTo(other);
+		   if(d<tol) {
+			   return true;
+		   }
+			return false;
 			
 			
 		}
@@ -157,6 +171,8 @@ public class Point2 {
 		 */
 		@Override
 		public String toString() {
+			
+			return "("+this.x+", "+this.y+")";
 			
 		}
 

@@ -246,11 +246,11 @@ public final class Vector2 {
      */
     public static Vector2 dirVector(double theta) {
     
-    	double x=Math.cos(theta);
-    	double y=Math.sin(theta);
-    	double mag=Math.sqrt(x*x+y*y);
-    	Vector2 p=new Vector2(x/mag, y/mag);
-		return p;
+//    	double x=Math.cos(theta);
+//    	double y=Math.sin(theta);
+//    	double mag=Math.sqrt(x*x+y*y);
+//    	Vector2 p=new Vector2(x/mag, y/mag);
+		return new Vector2(Math.cos(theta), Math.sin(theta));
         
     }
 
@@ -264,7 +264,7 @@ public final class Vector2 {
      */
     @Override
     public String toString() {
-		return name+","+"("+ this.x+","+this.y+")";
+		return "("+ this.x+","+this.y+")";
         
     }
 
@@ -291,8 +291,7 @@ public final class Vector2 {
     	   else {
     	       result = false;
     	   }
-    	   return result;
-    	
+    	   return result;    	
        
     }
 }
