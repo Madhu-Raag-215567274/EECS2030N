@@ -282,16 +282,16 @@ public final class Vector2 {
      *         less than <code>tol</code>, and <code>false</code> otherwise
      */
     public boolean similarTo(Vector2 other, double tol) {
-    	 boolean result = false;
-    	   double z =this.mag() - other.mag();
+ 
+    	double finX=this.getX()-other.getX();
+    	double finY=this.getY()-other.getY();
+       double mag= Math.sqrt(Math.pow(finX, 2)+ Math.pow(finY, 2));
+       if(mag<=tol) {
+    	   return true;
     	   
-    	   if (z < tol) {
-    	       result = true;
-    	   }
-    	   else {
-    	       result = false;
-    	   }
-    	   return result;    	
-       
+       }
+       else {
+    	   return false;
+       }
     }
 }

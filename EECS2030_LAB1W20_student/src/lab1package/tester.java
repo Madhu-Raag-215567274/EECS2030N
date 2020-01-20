@@ -10,11 +10,11 @@ import java.util.Scanner;
 	   public static void main(String[] args) {
 	      // Test constructor and toString()
 	      Student Jim = new Student("Jim", "1 Happy Ave");
-	      System.out.println(Jim);  // toString()
+	     // System.out.println(Jim);  // toString()
 
 	      // Test Setters and Getters
 	      Jim.setAddress("8 maple, vaughan");
-	      System.out.println(Jim);  // run toString() to inspect the modified instance
+	   //   System.out.println(Jim);  // run toString() to inspect the modified instance
 	      System.out.println(Jim.getName());
 	      System.out.println(Jim.getAddress());
 

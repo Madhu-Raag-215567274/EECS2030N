@@ -1,6 +1,7 @@
 package lab1package;
 
 import static org.junit.Assert.*;
+import java.awt.color.*;
 
 import org.junit.Test;
 

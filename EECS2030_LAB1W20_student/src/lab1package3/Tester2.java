@@ -20,6 +20,7 @@ import org.junit.Test;
 	        assertEquals("TonPrice", name);
 	        //double var1=10.0;
 	        assertEquals(10.0, price,0.00001);
+	        c.printNamePrice();
 	    }
 
 	    @Test
@@ -30,12 +31,14 @@ import org.junit.Test;
 	        assertEquals(null, name);
 	        assertEquals(0, price,0.0001);
 	        c.setName("Tom");
-	        c.setPrice(20.0);
+	        c.setName(20.0);
 	        name = c.getName();
 	        price = c.getPrice();
 	        assertEquals("Tom", name);
 	        assertEquals(20.0, price,0.0001);
+	        c.printNamePrice();
 	    }
+	   
 
 	    @Test
 	    public void test3() {
@@ -78,7 +81,7 @@ import org.junit.Test;
 	    	Attraction p1 = new Attraction("One", 30.0);
 	    	Attraction p2 = new Attraction();
 	        p2.setName("Two");
-	        p2.setPrice(60.0);
+	        p2.setName(60.0);
 	        r.addAttraction(p1);
 	        r.addAttraction(p2);
 	        r.addAttraction("Three", 40.0);
