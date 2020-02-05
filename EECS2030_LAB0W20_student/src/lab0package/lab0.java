@@ -192,8 +192,7 @@ public class lab0 {
 		
 	for(int i =0; arr[i] == a && i<arr.length ;a++) {
 		return true;
-	}
-	
+	}	
 		return false;
 	 }
 	
