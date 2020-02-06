@@ -1,5 +1,6 @@
 package carsharing;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class SimulationTester

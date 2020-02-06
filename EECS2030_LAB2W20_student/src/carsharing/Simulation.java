@@ -34,13 +34,15 @@ public class Simulation
     */
    public void loadPassengers(Station station, Car car)
    {
+	  
+	  
       // This version picks up any passengers going to the
       // car's destination first, and then picks up any
       // other passengers only if there is room.
       int carDest = car.getDestination();
       
       //Pick up people going to the destination first ("direct" passenger")
-      Passenger p;
+      Passenger p = null;
       //.....
             System.out.printf("Car %d loads direct passenger %s at station %d. Car now has %d passengers %s\n", 
       		      car.getIdNo(), p, station.getNumber(), car.getPassengers().size(), car.getPassengers());  
