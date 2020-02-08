@@ -60,6 +60,7 @@ public class Car {
 
 	public boolean dropOff() {
 		boolean flg=false;
+		location++;
 		for(int i =0; i<passengers.size();i++) {
 			if(passengers.get(i).getDestination()== location ) {
 				passengers.remove(i);

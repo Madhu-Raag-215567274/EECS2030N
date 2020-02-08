@@ -7,26 +7,28 @@ public class Station {
 	ArrayList<Passenger> people;
 
 	public Station(int number) {
-		
+		this.stationNumber=number;
+	 //this.people;
 		// TODO Auto-generated constructor stub
 	}
 
 	public int getNumber() {
 		// TODO Auto-generated method stub
-		return 0;
+		return stationNumber;
 	}
 
 
 	public void add(Passenger p) {
 		// TODO Auto-generated method stub
-		
+		System.out.println(people);
+		people.add(p);
 	}
 	public Passenger get(int index) {
-		return null;
+		return people.get(index);
 		
 	}
 	public Passenger remove(int index) {
-		return null;
+		return people.remove(index);
 		
 	}
 	
@@ -35,7 +37,7 @@ public class Station {
 		
 	}
 	public String toString() {
-		return null;
+		return people.toString();
 	}
 
 

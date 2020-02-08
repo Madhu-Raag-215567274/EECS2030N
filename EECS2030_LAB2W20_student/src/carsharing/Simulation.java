@@ -13,7 +13,7 @@ public class Simulation
    private double faresCollected = 0.0;
    private int milesDriven = 0;
    private Station[] stations;
-   
+   int counter =0;
    /**
     * Construct a simulation using a given generator.
     * @param generator the Random generator to use in this simulation.
@@ -34,12 +34,31 @@ public class Simulation
     */
    public void loadPassengers(Station station, Car car)
    {
+	   
+//        this.cars.add(car);	   
+//	   this.stations[counter]=station;
+//	 
+//	 for(int i =0;i< stations[counter].people.size();i++) {
+//		 if(station.people.get(i).getDestination()==car.destination && car.passengers.size()<3) {
+//			 car.add(station.people.get(i));// direct passengers
+//		 }
+//	 }
+//	  counter++;
+	  
 	  
 	  
       // This version picks up any passengers going to the
       // car's destination first, and then picks up any
       // other passengers only if there is room.
       int carDest = car.getDestination();
+      this.stations[0]=station;
+ 	 for(int i =0;i< station.people.size();i++) {
+		 if(station.people.get(i).getDestination()==carDest && car.passengers.size()<3) {
+			 car.add(station.people.get(i));// direct passengers
+		 }
+	 }
+      
+      
       
       //Pick up people going to the destination first ("direct" passenger")
       Passenger p = null;
@@ -50,6 +69,14 @@ public class Simulation
       
 
       //Now, anyone else going on the way ("ride passenger").
+            int l=0;
+            for(int i =station.getNumber();i<car.destination;i++) {
+            	
+            	if(car.getPassengers().size()<3 && station.people.get(l).destination== carDest) {
+            		car.add(station.people.get(l));
+            		l++;
+            	}
+            }
       
       //.....
             System.out.printf("Car %d loads ride passenger %s at station %d. Car now has %d passengers %s\n", 
