@@ -1,5 +1,7 @@
 package bookStore;
 
+import java.lang.reflect.Array;
+
 /**
  * A class representing a <strong> book store </strong> that has an <strong>
  * owner</strong> . A book store <strong> <em> owns a collection (or possibly
@@ -13,11 +15,15 @@ package bookStore;
  */
 
 import java.util.*;
+
+import javax.management.loading.PrivateClassLoader;
 public class BookStore {
 	
 		/*
 		 * YOU NEED A FIELD HERE TO HOLD THE Book OF THIS BookStore
 		 */
+	    private ArrayList<Book> book;
+	
 
 		private TreeMap<Book, Integer> books;
 		private BookStoreOwner owner;
@@ -30,6 +36,10 @@ public class BookStore {
 		 */
 		public BookStore(BookStoreOwner owner) {
 			// COMPLETE THIS
+			this.owner=owner;
+			this.books=new TreeMap<Book, Integer>();
+			book=new ArrayList<Book>();
+			
 
 			
 		}
@@ -43,6 +53,10 @@ public class BookStore {
 		 */
 		public BookStore(BookStore other) {
 			// COMPLETE THIS
+			books=other.books;
+			owner=other.owner;
+			book=other.book;
+			
 
 			
 		}
@@ -72,6 +86,12 @@ public class BookStore {
 		 * current owner of this book store
 		 */
 		public void changeOwner(BookStoreOwner currentOwner, BookStoreOwner newOwner) {
+			if(currentOwner!=this.owner) {
+				throw new IllegalArgumentException();
+			}
+			currentOwner.setName(newOwner.name);
+			currentOwner.setId(newOwner.id);
+			
 
 			// COMPLETE THIS
 
@@ -85,6 +105,12 @@ public class BookStore {
 		 * @param books a list of books to add to this book store
 		 */
 		public void add(List<Book> books) {
+			for(int i=0;i<books.size();i++) {
+				book.add(books.get(i));
+				
+			}
+		
+			
 			// COMPLETE THIS
 
 			
@@ -100,6 +126,7 @@ public class BookStore {
 		 *         otherwise
 		 */
 		public boolean contains(Book book) {
+			return this.book.contains(book);
 
 			// COMPLETE THIS
 
@@ -121,6 +148,16 @@ public class BookStore {
 		 *         contains a book equal to the specified book
 		 */
 		public Book sellingsingleBook(BookStoreOwner user, Book book) {
+			
+			if(user!=this.owner) {
+				return null;
+			}
+			if(this.book.contains(book)) {
+				return book;
+			}
+			return book;
+			
+			
 
 			// COMPLETE THIS
 
@@ -145,14 +182,23 @@ public class BookStore {
 		 *         equal to specified value
 		 */
 		public List<Book> sellingBooks(BookStoreOwner user, int pricevalue) {
+			ArrayList<Book> p = new ArrayList<Book>();
+			
+			
+			
+		
+			return null;
 
 			// COMPLETE THIS
 
 		
 
 	
+			
 		
-	}
+
+		}
+}
 
 
 

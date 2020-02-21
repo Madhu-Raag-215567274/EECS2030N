@@ -212,8 +212,98 @@ public class Testerv3 {
 		assertNull("remove allowed a non-owner to remove a book", got);
 	}
 	
+	@Test
+
+	public void test_sellingBooks() {
+
+	List<Book> books = new ArrayList<Book>();
+
+	Book b3= new Book("Optical Communication",2011,20);
+
+	books.add(b3);
+
+	Book b1= new Book("Java 1",2010, 90);
+
+	books.add(b1);
+
+	Book b2= new Book("Signals and Systems",2011, 70);
+
+	books.add(b2);
+
+	Book b4= new Book("5G",2010, 10);
+
+	books.add(b4);
+
+	BookStoreOwner w = new BookStoreOwner("OwnerA");
+
+	BookStore b = new BookStore(w);
+
+	b.add(books);
+
+	List<Book> resu = b.sellingBooks(w, 100);
+
+	System.out.println(resu);
+
+	List<Book> exp = new ArrayList<>(Arrays.asList(new Book("Java 1",2010, 90), new Book("5G",2010, 10) ) );
+
+	assertEquals(exp, resu);
+
+	}
+
+	@Test
+
+	public void test_sellingBooks2() {
+
+	List<Book> books = new ArrayList<Book>();
+
+	Book b4= new Book("5G",2010, 30);
+
+	books.add(b4);
+
+	Book b5= new Book("book20",2010, 20);
+
+	books.add(b5);
+
+	Book b3= new Book("Optical Communication",2011,70);
+
+	books.add(b3);
+
+	Book b1= new Book("Java 1",2010, 90);
+
+	books.add(b1);
+
+	Book b2= new Book("Signals and Systems",2011, 80);
+
+	books.add(b2);
+
+	Book b6= new Book("book5",2010, 5);
+
+	books.add(b6);
+
+	Book b7= new Book("book5",2010, 5);
+
+	books.add(b7);
+
+	BookStoreOwner w = new BookStoreOwner("OwnerA");
+
+	BookStore b = new BookStore(w);
+
+	b.add(books);
+
+	List<Book> resu = b.sellingBooks(w, 100);
+
+	System.out.println(resu);
+
+	List<Book> exp = new ArrayList<>(Arrays.asList(new Book("Java 1",2010, 90), new Book("book5",2010, 5), new Book("book5",2010, 5) ) );
+
+	assertEquals(exp, resu);
+	
+	}
+
+	}
+
 	
 	
 	
 	
-}
+
