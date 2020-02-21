@@ -1,6 +1,6 @@
 package bookStore;
 
-public class Book {
+public class Book implements Comparable<Book> {
 
 	String title;
 	double price;
