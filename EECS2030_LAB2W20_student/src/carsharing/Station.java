@@ -20,8 +20,9 @@ public class Station {
 
 	public void add(Passenger p) {
 		// TODO Auto-generated method stub
-		System.out.println(people);
+		
 		people.add(p);
+		
 	}
 	public Passenger get(int index) {
 		return people.get(index);
