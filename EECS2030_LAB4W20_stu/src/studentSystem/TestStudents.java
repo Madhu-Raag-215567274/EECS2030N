@@ -200,6 +200,7 @@ public class TestStudents {
 		assertNotSame(gpas, s.GPAs); // should be different reference
 		
 		for(int i=0; i<gpas.size(); i++) { // also content should be different references
+			
 			assertNotSame(gpas.get(i), s.GPAs.get(i));
 		}
 		

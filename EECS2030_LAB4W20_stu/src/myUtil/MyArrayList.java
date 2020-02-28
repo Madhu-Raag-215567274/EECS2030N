@@ -89,10 +89,7 @@ public class MyArrayList<E> implements MyList<E> {
 			
 		}
 		
-		System.out.println("---------");
-		for(int i=0;i<this.elementData.length;i++) {
-			System.out.println(this.elementData[i]);
-		}
+	
 			
 			
 	
