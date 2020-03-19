@@ -8,6 +8,7 @@ public class TestMyTreeSet extends TestSet {
 	@Override
 	protected MySet<String> loadSet() {
 		// COMPLETE THIS
+		return new MyTreeSet<String>();
 	}
 	
 	// add some methods

@@ -38,26 +38,50 @@ public class MyHashSet<E> extends MyAbstractSet<E> {
        
 	@Override
 	public boolean contains(E o) { 
-		// COMPLETE THIS
+
+	return map.containsKey(o);
 	}
 	
 	@Override
 	// Hint. add e into map as key, with the Dummy object PRESENT as value.
 	// Hint. look Map API for the return type of put
-	public boolean add(E e) { 
+	public boolean add(E e) {
+		if(map.containsKey(e)) {
+			return false;
+		}
+		map.put(e, PRESENT);
+		return true;
+	
 		// COMPLETE THIS
 	
 	}
 	
 	@Override
 	public boolean remove(E o) {
+		if(map.containsKey(o)) {
+			map.remove(o);
+			return true;
+		}
+		else {	
+		
+		return false;
+		}
+	
 		// COMPLETE THIS
 	}
 
 	@Override
 	public void clear() {
 		// COMPLETE THIS
+		this.map=new HashMap<>();
+		
 	}
+	@Override
+	public int size() {
+		return map.size();
+	}
+	
+
 	
 	//Other methods, such as the following size(), isEmpty(), addAll(), toString()  are inherited from MyAbstractSet
      

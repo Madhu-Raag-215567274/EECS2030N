@@ -18,6 +18,7 @@ public class MyTreeSet<E> extends MyAbstractSet<E> {
      * Constructs a new, empty set;  
      */
     public MyTreeSet() {
+    	 map = new TreeMap<>();
     	// COMPLETE THIS
     }
     
@@ -25,30 +26,52 @@ public class MyTreeSet<E> extends MyAbstractSet<E> {
     // addAll
 	@Override
     public Iterator<E> iterator(){
+		return map.keySet().iterator();
 		// COMPLETE THIS
     }
        
 	@Override
 	public boolean contains(E o) {
+		return map.containsKey(o);
 		// COMPLETE THIS
 	}
 	
 	@Override
 	public boolean add(E e) {
+		if(map.containsKey(e)) {
+			return false;
+		}
+		map.put(e, PRESENT);
+		return true;
 		// COMPLETE THIS
 	
 	}
 	
 	@Override
 	public boolean remove(E o) {
+		if(map.containsKey(o)) {
+			map.remove(o);
+			return true;
+		}
+		else {	
+		
+		return false;
+		}
+	
 		// COMPLETE THIS
 	}
 
 	@Override
 	public void clear() {
 		// COMPLETE THIS
+		map = new TreeMap<>();
 		
 	}
+	@Override
+	public int size() {
+		return map.size();
+	}
+	
 	
 	
 	 

@@ -23,6 +23,7 @@ public class MyLinkedHashSet<E> extends MyAbstractSet<E> {
      */
     public MyLinkedHashSet() {
     	// COMPLETE THIS
+    	 map = new LinkedHashMap();
     }
     
     /**
@@ -30,35 +31,59 @@ public class MyLinkedHashSet<E> extends MyAbstractSet<E> {
 	 * 
 	 */
     public MyLinkedHashSet(int initialCapacity) {
+    	 map = new LinkedHashMap<>(initialCapacity);
     	// COMPLETE THIS
     }
     
     
 	@Override
     public Iterator<E> iterator(){
+		return map.keySet().iterator();
 		// COMPLETE THIS
     }
        
 	@Override
 	public boolean contains(E o) {
+		return map.containsKey(o);
 		// COMPLETE THIS
 	}
 	
 	@Override
 	public boolean add(E e) {
+		if(map.containsKey(e)) {
+			return false;
+		}
+		map.put(e, PRESENT);
+		return true;
+	
+		
 		// COMPLETE THIS
 	
 	}
 	
 	@Override
 	public boolean remove(E o) {
+		if(map.containsKey(o)) {
+			map.remove(o);
+			return true;
+		}
+		else {	
+		
+		return false;
+		}
 		// COMPLETE THIS
 	}
 
 	@Override
 	public void clear() {
+		 map = new LinkedHashMap();
 		// COMPLETE THIS
 	}
+	@Override
+	public int size() {
+		return map.size();
+	}
+	
 	
 	
 	 

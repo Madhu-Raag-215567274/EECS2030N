@@ -8,6 +8,7 @@ public class TestMyLinkedHashSet extends TestSet {
 	@Override
 	protected MySet<String> loadSet() {
 		// COMPLETE THIS
+		return new MyLinkedHashSet<String>();
 	}
 	
 	

@@ -26,7 +26,7 @@ public abstract class MyAbstractSet<E> implements MySet<E> {
 			add(e);
 		}
 		
-	};
+	}
 
 	// methods to be implemented by subclassess, implementation dependent
 	@Override
