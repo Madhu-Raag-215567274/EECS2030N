@@ -105,11 +105,20 @@ public class BookStore {
 		 * @param books a list of books to add to this book store
 		 */
 		public void add(List<Book> books) {
-			for(int i=0;i<books.size();i++) {
-				book.add(books.get(i));
+			for (Book b : books) {
+
+				if (this.books.containsKey(b)) {
+
+					int n = this.books.get(b);
+
+					this.books.put(b, n + 1);
+				} 
 				
+				else {
+					this.books.put(b, 1);
+				}
+
 			}
-		
 			
 			// COMPLETE THIS
 
@@ -126,7 +135,7 @@ public class BookStore {
 		 *         otherwise
 		 */
 		public boolean contains(Book book) {
-			return this.book.contains(book);
+			return this.books.containsKey(book);
 
 			// COMPLETE THIS
 
@@ -152,7 +161,7 @@ public class BookStore {
 			if(user!=this.owner) {
 				return null;
 			}
-			if(this.book.contains(book)) {
+			if(this.books.containsKey(book)) {
 				return book;
 			}
 			return book;
@@ -182,12 +191,17 @@ public class BookStore {
 		 *         equal to specified value
 		 */
 		public List<Book> sellingBooks(BookStoreOwner user, int pricevalue) {
-			ArrayList<Book> p = new ArrayList<Book>();
-			
-			
-			
-		 
-			return null;
+			List<Book> result = new ArrayList<>();
+			if (!user.equals(this.owner)) {
+				return result;
+			}
+			for (Book b : this.books.descendingKeySet()) {
+				while (this.books.get(b) > 0 && pricevalue >= b.getPrice()) {
+					result.add(this.sellingsingleBook(this.owner, b));
+					pricevalue -= b.getPrice();
+				}
+			}
+			return result;
 
 			// COMPLETE THIS
 

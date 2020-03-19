@@ -33,10 +33,17 @@ public class Student {
 		this.name = name;
 		this.year = year;
 		this.joinDate =new Date(joinDate.getYear(),joinDate.getMonth());
-		this.GPAs = new ArrayList<GPA>(gpas);
+//		this.GPAs = new ArrayList<GPA>(gpas);
+//		
+//		this.courses = new HashSet<Course>(courses);
+//		
+		this.courses = new HashSet<>();
+		for(Course c: courses)
+			this.courses.add(c);
 		
-		this.courses = new HashSet<Course>(courses);
-		
+		this.GPAs = new ArrayList<>();
+		for(GPA g: gpas)
+			this.GPAs.add(new GPA(g.getYear() , g.getGPA()));
 		 
 	}
 

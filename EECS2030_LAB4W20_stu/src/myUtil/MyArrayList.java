@@ -170,7 +170,7 @@ public class MyArrayList<E> implements MyList<E> {
 		}
 		
 		
-	E p= (elementData[index]);
+	E p= elementData[index];
 		int counter=index;
 		
 		if(index==this.elementData.length-1) {
