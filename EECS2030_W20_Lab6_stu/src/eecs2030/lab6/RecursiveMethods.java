@@ -150,14 +150,14 @@ public class RecursiveMethods {
 	 */
 	public int numberOfFirstChar0(String str) {
 		int len=str.length();
-		int ans=0;
+		int temp=0;
 		if(len==0)
 		return 0;
 		if(str.charAt(0)==str.charAt(len-1))
-		ans+=1;
+		temp+=1;
 		String sub=str.substring(0,len-1);
-		ans+=numberOfFirstChar(sub);
-		return ans;
+		temp+=numberOfFirstChar(sub);
+		return temp;
 	
 		// COMPLETE THIS
 		// make this method recursive, or, call a recursive helper function
@@ -200,14 +200,14 @@ public class RecursiveMethods {
 	 */
 	public int numberOfFirstChar(String str) {
 		int len=str.length();
-		int ans=0;
+		int temp=0;
 		if(len==0)
 		return 0;
 		if(str.charAt(0)==str.charAt(len-1))
-		ans+=1;
-		String subst=str.substring(0,len-1);
-		ans+=numberOfFirstChar(subst);
-		return ans;
+		temp+=1;
+		String sub=str.substring(0,len-1);
+		temp+=numberOfFirstChar(sub);
+		return temp;
 
 		// COMPLETE THIS
 		// make this method recursive, or, call a recursive helper function
